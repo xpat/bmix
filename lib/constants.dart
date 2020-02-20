@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const kBottomContainerHeight = 80.0;
 const kBottomContainerColor = Color(0xFFEB1555);
@@ -13,4 +14,9 @@ const kLabelTextStyle = TextStyle(
 const kSliderTextStyle = TextStyle(
 fontSize: 50.0,
 fontWeight: FontWeight.w900,
+);
+
+const kLargeButtonTextStyle = TextStyle(
+  fontSize: 45.0,
+  fontWeight: FontWeight.w800
 );

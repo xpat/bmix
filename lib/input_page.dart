@@ -278,8 +278,8 @@ class _InputPageState extends State<InputPage> {
                   child: Center(
                     child: Text(
                       'Calculate',
-                      style: GoogleFonts.aclonica(
-                        textStyle: kSliderTextStyle,
+                      style: GoogleFonts.simonetta(
+                        textStyle: kLargeButtonTextStyle,
                       ),
                     ),
                   ),

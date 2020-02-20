@@ -20,7 +20,7 @@ class ResultsPage extends StatelessWidget {
             child: Text(
               'Hello Results',
               style: GoogleFonts.aclonica(
-                textStyle: kSliderTextStyle,
+                textStyle: kLargeButtonTextStyle,
               ),
             ),
           ),
@@ -32,7 +32,7 @@ class ResultsPage extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Re-Calculate',
-                  style: GoogleFonts.aclonica(
+                  style: GoogleFonts.simonetta(
                     textStyle: kSliderTextStyle,
                   ),
                 ),
