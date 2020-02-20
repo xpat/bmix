@@ -50,48 +50,51 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('BMI CALCULATOR'),
+          title: Text('BMIX CALCULATOR',
+              style: GoogleFonts.aclonica(
+                textStyle: kLabelTextStyle,
+              )),
         ),
         body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
                   child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: ReusableCardXD(
-                          onPress: () {
-                            setState(() {
-                              selectedGender = Gender.male;
-                            });
-                          },
-                          colour: selectedGender == Gender.male
-                              ? kActiveCardColour
-                              : kInactiveCardColour,
-                          cardChild: IconContent(
-                            icon: (FontAwesomeIcons.mars),
-                            label: ('MALE'),
-                          ),
-                        ),
+                children: <Widget>[
+                  Expanded(
+                    child: ReusableCardXD(
+                      onPress: () {
+                        setState(() {
+                          selectedGender = Gender.male;
+                        });
+                      },
+                      colour: selectedGender == Gender.male
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
+                      cardChild: IconContent(
+                        icon: (FontAwesomeIcons.mars),
+                        label: ('MALE'),
                       ),
-                      Expanded(
-                        child: ReusableCardXD(
-                          onPress: () {
-                            setState(() {
-                              selectedGender = Gender.female;
-                            });
-                          },
-                          colour: selectedGender == Gender.female
-                              ? kActiveCardColour
-                              : kInactiveCardColour,
-                          cardChild: IconContent(
-                            icon: (FontAwesomeIcons.venus),
-                            label: ('FEMALE'),
-                          ),
-                        ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ReusableCardXD(
+                      onPress: () {
+                        setState(() {
+                          selectedGender = Gender.female;
+                        });
+                      },
+                      colour: selectedGender == Gender.female
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
+                      cardChild: IconContent(
+                        icon: (FontAwesomeIcons.venus),
+                        label: ('FEMALE'),
                       ),
-                    ],
-                  )),
+                    ),
+                  ),
+                ],
+              )),
               Expanded(
                 child: ReusableCardXD(
                   colour: kActiveCardColour,
@@ -132,9 +135,9 @@ class _InputPageState extends State<InputPage> {
                           thumbColor: Color(0xFFEB1555),
                           overlayColor: Color(0x52EB1555),
                           thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                              RoundSliderThumbShape(enabledThumbRadius: 15.0),
                           overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                              RoundSliderOverlayShape(overlayRadius: 30.0),
                         ),
                         child: Slider(
                           value: height.toDouble(),
@@ -153,68 +156,67 @@ class _InputPageState extends State<InputPage> {
                 ),
               ),
               Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: ReusableCardXD(
-                          colour: kActiveCardColour,
-                          cardChild: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'WEIGHT',
-                                  style: GoogleFonts.aclonica(
-                                    textStyle: kLabelTextStyle,
-                                  ),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ReusableCardXD(
+                        colour: kActiveCardColour,
+                        cardChild: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'WEIGHT',
+                                style: GoogleFonts.aclonica(
+                                  textStyle: kLabelTextStyle,
                                 ),
-                                Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .baseline,
-                                    textBaseline: TextBaseline.alphabetic,
-                                    children: <Widget>[
-                                      Text(
-                                        weight.toString(),
-                                        style: GoogleFonts.aclonica(
-                                          textStyle: kSliderTextStyle,
-                                        ),
-                                      ),
-                                      SizedBox(width: 5.0),
-                                      Text(
-                                        'kg',
-                                        style: GoogleFonts.aclonica(
-                                          textStyle: kLabelTextStyle,
-                                        ),
-                                      ),
-                                    ]),
-                                Row(
+                              ),
+                              Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.baseline,
+                                  textBaseline: TextBaseline.alphabetic,
                                   children: <Widget>[
-                                    RoundIconButton(
-                                      icon: FontAwesomeIcons.minus,
-                                      onPressed: () {
-                                        setState(() {
-                                    weight--;
-                                        });
-                                      },
+                                    Text(
+                                      weight.toString(),
+                                      style: GoogleFonts.aclonica(
+                                        textStyle: kSliderTextStyle,
+                                      ),
                                     ),
-                                    SizedBox(width: 10.0),
-                                    RoundIconButton(
+                                    SizedBox(width: 5.0),
+                                    Text(
+                                      'kg',
+                                      style: GoogleFonts.aclonica(
+                                        textStyle: kLabelTextStyle,
+                                      ),
+                                    ),
+                                  ]),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  RoundIconButton(
+                                    icon: FontAwesomeIcons.minus,
+                                    onPressed: () {
+                                      setState(() {
+                                        weight--;
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(width: 10.0),
+                                  RoundIconButton(
                                       icon: FontAwesomeIcons.plus,
                                       onPressed: () {
-                                        setState((){
+                                        setState(() {
                                           weight++;
                                         });
-                                      }
-                                    ),
-                                  ],
-                                ),
-                              ]),
-                        ),
+                                      }),
+                                ],
+                              ),
+                            ]),
                       ),
-                      Expanded(
-                        child: ReusableCardXD(
-                            colour: kActiveCardColour,
+                    ),
+                    Expanded(
+                      child: ReusableCardXD(
+                        colour: kActiveCardColour,
                         cardChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -226,8 +228,7 @@ class _InputPageState extends State<InputPage> {
                             ),
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment
-                                    .baseline,
+                                crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
                                 children: <Widget>[
                                   Text(
@@ -251,34 +252,52 @@ class _InputPageState extends State<InputPage> {
                                 ),
                                 SizedBox(width: 10.0),
                                 RoundIconButton(
-                                    icon: FontAwesomeIcons.plus,
-                                    onPressed: () {
-                                      setState((){
+                                  icon: FontAwesomeIcons.plus,
+                                  onPressed: () {
+                                    setState(
+                                      () {
                                         age++;
-                                      });
-                                    }
+                                      },
+                                    );
+                                  },
                                 ),
                               ],
                             ),
-                          ]),
+                          ],
+                        ),
                       ),
-                      )],
-                  )),
-              Container(
-                color: kBottomContainerColor,
-                margin: EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                height: kBottomContainerHeight,
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/second');
+                },
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'Calculate',
+                      style: GoogleFonts.aclonica(
+                        textStyle: kSliderTextStyle,
+                      ),
+                    ),
+                  ),
+                  color: kBottomContainerColor,
+                  margin: EdgeInsets.only(top: 10.0),
+                  width: double.infinity,
+                  height: kBottomContainerHeight,
+                ),
               )
             ]));
   }
 }
+
 class RoundIconButton extends StatelessWidget {
+  RoundIconButton({@required this.icon, @required this.onPressed});
 
-        RoundIconButton({@required this.icon, @required this.onPressed});
-
-      final IconData icon;
-      final Function onPressed;
+  final IconData icon;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -287,12 +306,11 @@ class RoundIconButton extends StatelessWidget {
       onPressed: onPressed,
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(
-      width: 50.0,
-      height: 50.0,
-    ),
+        width: 50.0,
+        height: 50.0,
+      ),
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
-   );
+    );
   }
 }
-
