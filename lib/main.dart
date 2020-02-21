@@ -1,11 +1,12 @@
-import 'package:bmi_calculator/results_page.dart';
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
-import 'input_page.dart';
+import 'package:bmi_calculator/screens/input_page.dart';
 //import 'package:google_fonts/google_fonts.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 void main() => runApp(BMICalculator());
+
 
 class BMICalculator extends StatelessWidget {
   @override
