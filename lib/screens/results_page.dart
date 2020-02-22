@@ -5,6 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+
+  ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,19 +48,19 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    interpretation,
                     style: GoogleFonts.aclonica(
                       textStyle: kResultsTextStyle,
                     ),
                   ),
                   Text(
-                    '18.3',
+                    bmiResult,
                     style: GoogleFonts.aclonica(
                       textStyle: kBMIResultNumberStyle,
                     ),
                   ),
                   Text(
-                    'Your BMIX result is perhaps low and may indicate that you should eat more or exercise less.  Please consult your physician before making any major changes to your lifestyle.',
+                    resultText,
                     style: GoogleFonts.simonetta(
                       textStyle: kLabelTextStyle,
                     ),
@@ -64,7 +71,7 @@ class ResultsPage extends StatelessWidget {
           ),BottomButton(
             buttonTitle: 'RE-CALCULATE',
             onTap: () {
-              Navigator.pushNamed(context, '/');
+            Navigator.pop(context);
             },
           ),
         ],
