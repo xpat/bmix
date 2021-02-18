@@ -10,13 +10,13 @@ class CalculatorBrain {
   double _bmi;
 
   String calculateBMI() {
-    _bmi = weight / pow(height/100, 2);
+    _bmi = (weight / pow(height, 2))*703;
     return _bmi.toStringAsFixed(1);
   }
 
   String getResult() {
     if(_bmi >= 25){
-      return 'You have a higher than normal body weight. Eat less or exercise more.';
+      return 'Keep eating this amount and you\'ll be eligible for a Covid vaccine.';
     } else if (_bmi > 18.5) {
       return 'You have a normal body weight. Does it feel normal?';
     } else {
@@ -27,7 +27,7 @@ class CalculatorBrain {
   String getInterpretation() {
 
     if(_bmi >= 25){
-      return 'Overweight';
+      return 'Covid Vaccine Eligible';
     } else if (_bmi > 18.5) {
       return 'Normal';
     } else {

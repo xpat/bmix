@@ -24,8 +24,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 180;
-  int weight = 60;
+  int height = 60;
+  int weight = 170;
   int age = 40;
 
 //  Color maleCardColour = inactiveCardColour;
@@ -125,7 +125,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                       SizedBox(width: 5.0),
                       Text(
-                        'cm',
+                        'in',
                         style: GoogleFonts.aclonica(
                           textStyle: kLabelTextStyle,
                         ),
@@ -145,8 +145,8 @@ class _InputPageState extends State<InputPage> {
                     ),
                     child: Slider(
                       value: height.toDouble(),
-                      min: 120.0,
-                      max: 220.0,
+                      min: 30.0,
+                      max: 108.0,
                       onChanged: (double newValue) {
 //                          print(newValue);
                         setState(() {
@@ -187,7 +187,7 @@ class _InputPageState extends State<InputPage> {
                                 ),
                                 SizedBox(width: 5.0),
                                 Text(
-                                  'kg',
+                                  'lb',
                                   style: GoogleFonts.aclonica(
                                     textStyle: kLabelTextStyle,
                                   ),
